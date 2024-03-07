@@ -1,0 +1,38 @@
+#content-container {
+    margin: -180px auto; /* Adjust the margin as needed for centering */
+    max-width: 800px; /* Set a maximum width for the content */
+}
+
+h1 {
+    text-align: center; /* Center the heading horizontally */
+    color: #f2f2f2;
+}
+
+form {
+    text-align: center; /* Center the form horizontally */
+    margin-bottom: 20px; /* Add margin to the bottom of the form */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto; /* Center the table horizontally */
+    margin-top: 20px;
+    background-color: rgb(2, 37, 74);
+    color:#f2f2f2;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+ /* Media queries for responsiveness */
+ @media (max-width: 600px) {
+    #content-container {
+        margin: 10px auto;
+        max-width: 100%; /* Make it full width on smaller screens */
+        padding: 0 10px; /* Adjust padding for smaller screens */
+    }
+}

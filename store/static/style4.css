@@ -1,0 +1,40 @@
+
+/* styles.css */
+.center {
+    margin-top: -150px;
+    margin-left: 10px;
+}
+
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    
+
+}
+
+li {
+    margin-bottom: 10px; /* Adjust margin as needed */
+    color: #ccc;
+   
+    
+}
+
+#nav {
+    display: flex;
+   
+    margin-top: 10px; /* Adjust margin as needed */
+}
+
+.page-link {
+    padding: 5px 10px;
+    margin: 0 5px;
+    text-decoration: none;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.page-link:hover {
+    background-color: #f0f0f0;
+}

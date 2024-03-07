@@ -1,0 +1,17 @@
+{% extends 'layout/app-layout.html' %}
+{% block 'content' %}
+
+<div style=" display: flex; justify-content: center; align-items: center; height: 100vh; margin-top: -300px;">
+  <div style="background-color: rgb(8, 27, 44); border: 1px solid #ccc; padding: 15px; border-radius: 5px;">
+  {% if user.is_authenticated %}
+    <p style="color: #ccc;">You are currently logged in as {{ user.username }}.</p>
+    <form method="post">
+      {% csrf_token %}
+      <input type="submit" value="LogOut" style="background-color: hsl(195, 74%, 51%); color: #f7f0f0;">
+    </form>
+  {% else %}
+    <p>You are not currently logged in.</p>
+  {% endif %}
+ </div>
+</div>
+{% endblock %}

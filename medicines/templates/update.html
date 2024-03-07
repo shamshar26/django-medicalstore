@@ -1,0 +1,34 @@
+{% extends 'layout/app-layout.html' %}
+{% load static %}
+
+{% block 'content' %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'style5.css' %}">
+
+<div class="wrapper">
+    <h2>Update Medicine</h2>
+
+    <form method="post" action="">
+        {% csrf_token %}
+
+        <div class="input-box">
+           <!--<label for="{{ form.name.id_for_label }}">Medicine Name:</label>-->
+            <input type="text" id="{{ form.name.id_for_label }}" name="{{ form.name.name }}" value="{{ form.name.value }}" placeholder="Name" required>
+        </div>
+
+        <div class="input-box">
+            <!--<label for="{{ form.price.id_for_label }}">Price:</label>-->
+            <input type="number" id="{{ form.price.id_for_label }}" name="{{ form.price.name }}" step="0.01" value="{{ form.price.value }}" placeholder="Price" required>
+        </div>
+
+        <div class="input-box">
+           <!-- <label for="{{ form.description.id_for_label }}">Description:</label>-->
+            <textarea id="{{ form.description.id_for_label }}" name="{{ form.description.name }}" rows="4" placeholder="Description" required>{{ form.description.value }}</textarea>
+        </div>
+
+        <div class="add">
+            <input type="submit" value="Update Medicine">
+        </div>
+    </form>
+</div>
+{% endblock %}

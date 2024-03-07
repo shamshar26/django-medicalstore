@@ -1,0 +1,13 @@
+{% extends 'layout/app-layout.html'%}
+{% block 'content' %}
+
+<div style=" display: flex; justify-content: center; align-items: center; height: 100vh; margin-top: -300px;">
+    <div style="background-color: rgb(8, 27, 44); border: 1px solid #ccc; padding: 15px; border-radius: 5px;">
+        <form action="" method="post">
+            {% csrf_token %}
+            <p style="color: #ccc;" >Are you sure you want to delete this medicine "{{medicine.name}}"</p>
+            <input type="submit" value="Confirm" style="background-color: hsl(195, 74%, 51%); color: #f7f0f0;">
+        </form>
+    </div>
+</div>
+{%endblock%}

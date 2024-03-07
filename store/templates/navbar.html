@@ -1,0 +1,29 @@
+
+<div>
+    <nav class="navbar navbar-wrapper navbar-expand-sm bg-dark navbar-dark">
+        <div class="navbar-brand"><h4>MEDICO</h4></div>
+     <button class="navbar-toggler" data-toggle="collapse"
+        data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+            <li class="nav-item"> <a href="{% url 'home' %}" class="nav-link text-white"><b>Home</b></a></li>&nbsp;
+
+        {% if user.is_authenticated %}
+            <!-- Show these links if the user is authenticated -->
+            <li class="nav-item"><a href="{% url 'createmedicine' %}" class="nav-link text-white"><b>Add Medicines</b></a></li>&nbsp;
+            <li class="nav-item"><a href="{% url 'readmedicine' %}" class="nav-link text-white"><b>Available Medicines</b></a></li>&nbsp;
+            <li class="nav-item"> <a href="{% url 'logout' %}" class="nav-link text-white"><b>LogOut</b></a></li>&nbsp;
+
+           
+        {% else %}
+            <!-- Show these links if the user is not authenticated -->
+            <li class="nav-item"> <a href="{% url 'signup' %}" class="nav-link text-white"><b>Signup</b></a></li>&nbsp;
+           <li class="nav-item"> <a href="{% url 'login' %}" class="nav-link text-white"><b>Login</b></a></li>&nbsp;
+        {% endif %}
+    </ul>
+    </div>
+    </nav>
+</div>

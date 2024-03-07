@@ -1,0 +1,39 @@
+{% extends 'layout/app-layout.html'%}
+{% load static %}
+
+{% block 'content' %}
+<link rel="stylesheet" type="text/css" href="{% static 'style3.css' %}">
+
+
+<div id="content-container">
+<h1>Read Medicines</h1>
+
+<form method="GET" action="">
+   <!-- <label for="search_query">Search:</label>-->
+    <input type="text" name="search_query" id="search_query" value="{{ request.GET.search_query }}">
+    <button type="submit">Search</button>
+  </form>
+
+
+<table border="1">
+    <tr><th>Medicine_id</th>
+        <th>Medicine_name</th>
+        <th>Medicine_price</th>
+        
+        <th colspan="2">Actions</th></tr>
+    
+    {% for medicine in medicine_list %}
+    <tr>
+        <td>{{medicine.id}}</td>
+        <td>{{medicine.name}}</td>
+        <td>{{medicine.price}}</td>
+        
+        <td><a href="{% url 'updatemedicine' medicine.id %}" class="btn btn-success" value="edit" type="submit">Edit</a></td>
+        <td><a href="{% url 'deletemedicine' medicine.id %}" class="btn btn-danger" value="edit" type="submit">Delete</a></td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+
+
+{%endblock%}
